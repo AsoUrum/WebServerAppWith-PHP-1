@@ -1,0 +1,212 @@
+#checking string lent without special characters
+mb_strlen($anystring)
+
+#sub string to fine a string in a string. can also add positions to get the exact position of a string
+substr($stringToFind,$positionOfstring);
+
+# get returns the position of a given string
+strpos($product,"#");
+
+#replace a string at a particular  position
+str_replace();
+
+# joins  array elements with separators strings
+
+
+settype() returns a boolean  but can be used to convert varibles
+cast by 
+astring = (bool)thestringtocast
+
+gettype() returns a string
+
+is_numeric() returns a boolean means its a numeric
+is_nan()   returns boolean means its not a numeric
+! is negative of a statement.
+is_integer() return a boolean
+is_boolean()
+is_string()
+
+var_dump()
+print_r()
+
+#########################################################arrays##############################################
+
+sort($myArray)
+rsort($myArray)
+
+asort()
+ksort()
+
+arsort()
+krsort()
+
+array_push($myArray, " ","",)
+
+array_push($myArray, " ","",)
+
+array_pop() remove last element from array
+array_shift() remove the first element of the arry
+ unset() remove and item from a particuler key
+
+
+ 
+######### converting fro JSON string to array 
+		
+          $myArray2 = json_decode($JSON_string);
+          echo "<br><br>";
+          var_dump($myArray2);
+
+
+
+#date 
+        #6 different technigues to mange date
+        $mydate = new DateTime("now");
+       
+        var_dump($mydate);
+        
+        echo (json_encode($mydate));
+         
+        
+        $myDateTime = date_create("now");
+         echo "<br><br>";
+        var_dump($myDateTime);
+         echo "<br><br>";
+         echo(json_encode($myDateTime));
+         echo "<br><br>";
+         
+         $mydate = new DateTime("2020-02-10");
+         echo "<br><br>";
+         
+         echo (json_encode($mydate));
+          echo "<br><br>";
+        echo $mydate->format("y-m-d H:i:s");
+        
+        
+		
+		
+		 #########################################################################
+        # 2 timestamp
+        # very big interger
+        # represent the number of seconds that has elapses from 1970-1-1
+        
+        
+        $myTimeStamp = strtotime("2021-02-25");
+        var_dump($myTimeStamp);
+		
+		
+		
+	##################
+
+numOfTicket = (integer)$numOfTicket; example  for casting
+
+
+#$_SESION()
+
+session_start();
+
+
+
+echo "Copyright &copy; urum ".$mydate->format("Y"); how to copy write 
+
+ $make  = htmlspecialchars($_POST["make"]);
+ $model = htmlspecialchars($_POST["model"]);
+ $year = htmlspecialchars($_POST["year"]);
+
+
+to avoid getting html/js injections 
+        #filter #1
+        echo"<br><br> filter #1 SANITIZE STRING: <br>";
+        echo filter_input(INPUT_POST,"firstName" ,FILTER_SANITIZE_STRING);
+        
+         #filter #2
+        echo"<br><br> filter #2 SANITIZE FULL: <br>";
+        echo filter_input(INPUT_POST,"firstName" ,FILTER_SANITIZE_SPECIAL_CHARS);
+        
+         #filter #3
+        echo"<br><br> filter #3:  htmlspecailchars<br>";
+        echo htmlspecialchars($_POST["save"]);
+        
+          #filter #4
+        echo"<br><br> filter #4:  htmlentitites<br>";
+        echo htmlentities($_POST["save"]);
+        
+
+
+
+------------------------file reader and writting-------------------------------------------
+$fileHandle = fopen("jf.txt", "w");
+        $fclose($fileHandle);
+        ?>
+
+
+$fileHandle = fopen("jf.txt", "w") or die("cannot open the file");
+        
+        fwrite($fileHandle,"this is one computer sold");
+        
+        fclose($fileHandle);
+        
+        echo"done";
+        ?>
+
+
+#file_put_contents("jf.txt","wellcome\r\n", FILE_APPEND);
+
+
+$fileHandle = fopen("jf.txt", "a") or die("cannot open the file");
+        
+        fwrite($fileHandle,"this is one computer sold");
+        
+        fclose($fileHandle);
+        
+        echo"done";
+        ?>
+
+
+
+
+ $title = $_GET["title"];
+        $firstName = $_GET["firstName"];
+        $lastName = $_GET["lastName"];
+        
+        echo "welcome ". $title." ".$firstName ." ". $lastName;
+        
+         if(isset($_GET["color"])){
+             $color = htmlspecialchars($_GET["color"]);
+             
+             //if ($color!="red"&& )
+         }
+             
+
+
+
+
+
+
+ #file_put_contents("jf.txt","wellcome\r\n", FILE_APPEND) or die("cannot open the file");
+        
+        
+        
+$fileHandle = fopen("jf.txt", "r") or die("cannot open the file");
+        
+        ##$content = fread($fileHandle, filesize("jf.txt"));
+        
+        while (! feof($fileHandle)) 
+        {
+           echo  fgets($fileHandle)."<br>";
+            #use json
+           #table cells <td>;
+        }
+        
+        fclose($fileHandle)
+        
+
+
+
+
+global varibles
+
+$_COOKIE;
+$_GET;
+$_POST;
+$_SESSION;
+        
